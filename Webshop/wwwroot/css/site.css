@@ -1,8 +1,7 @@
 ﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification\ 
 for details on configuring this project to bundle and minify static web assets. */
 body {
-    padding-top: 50px;
-    padding-bottom: 20px;
+  
 }
 
 /* Wrapping element */
@@ -27,11 +26,59 @@ body {
 #qrCode {
     margin: 15px;
 }
-
-/* Hide/rearrange for smaller screens */
-@media screen and (max-width: 767px) {
-    /* Hide captions */
-    .carousel-caption {
-        display: none;
+@media only screen and (min-width:500px) {
+    .container-test {
+        display: flex;
     }
 }
+label {
+    margin: 0 40px 0 0;
+    font-size: 26px;
+    line-height: 70px;
+    display: none;
+}
+
+#toggle {
+    display: none;
+}
+/* Hide/rearrange for smaller screens */
+@media only screen and (max-width: 500px) {
+    /* Hide captions */
+    
+    label {
+        display: block;
+        cursor:pointer;
+    }
+    .container-test {
+        text-align:center;
+        width:60%;
+        height:100px;
+        display:none;
+        background-color:lightgrey;
+    }
+    .container-test a {
+        display:block;
+        border-bottom:1px solid #ccc;
+        margin:0;
+    }
+    #toggle:checked + .container-test {
+        display:block;
+    }
+    
+}
+
+
+.box {
+    flex:1;
+    
+}
+.box1 {
+    flex:1;
+}
+.box2 {
+    flex:1;
+}
+.box3 {
+    flex:1;
+}
+
