@@ -39,14 +39,18 @@ label {
 }
 
 .container-test {
-    background-color:blue;
-    height:70px;
-    padding-left:15px;
-    padding-right:15px;
-    font-size:16px;
-    line-height:70px;
-    
+    background-color: #1f343f;
+    height: 70px;
+    padding-left: 15px;
+    padding-right: 15px;
+    font-size: 16px;
+    line-height: 70px;
 }
+    .container-test a {
+        color: white;
+        text-decoration: none;
+        font-family: 'KoHo', sans-serif;
+    }
 
 
 #toggle {
@@ -59,21 +63,23 @@ label {
     label {
         display: block;
         cursor: pointer;
-        background-color: blue;
+        background-color: #1f343f;
         padding-left: 15px;
     }
     .container-test {
         text-align:center;
         width:60%;
-        height:100px;
+        height:150px;
+        line-height:20px;
         display:none;
-        background-color:blue;
+        background-color:#1f343f;
     }
     .container-test a {
         display:block;
         border-bottom:1px solid #ccc;
         margin:0;
         padding:0;
+
     }
     #toggle:checked + .container-test {
         display:block;

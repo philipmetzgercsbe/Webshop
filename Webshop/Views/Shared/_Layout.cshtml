@@ -3,6 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.googleapis.com/css?family=KoHo" rel="stylesheet">
     <title>@ViewData["Title"] - Webshop</title>
 
     <environment include="Development">
@@ -10,10 +11,10 @@
         <link rel="stylesheet" href="~/css/site.css" />
     </environment>
     <environment exclude="Development">
-       <!-- <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/css/bootstrap.min.css"
-              asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
-              asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
-        <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />-->
+        <!-- <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/css/bootstrap.min.css"
+               asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
+               asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
+         <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />-->
     </environment>
 </head>
 <body>
@@ -40,7 +41,8 @@
                 <input type="checkbox" id="toggle" />
                 <div class="container-test">
                     <div class="box">
-                        <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">Logo</a>
+                        <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand"><img src="~/images/beer.png" style="width:60px;margin-top:5px" alt="Homelogo"/></a>
+                        
                     </div>
 
                     <div class="box1">
