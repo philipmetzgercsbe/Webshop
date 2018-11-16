@@ -9,7 +9,7 @@ namespace Webshop.Models
     public class Cart
     {
         [Key]
-        public int CartID;
+        public long CartID;
         //EF will create Product_Cart and Cart_User
         public virtual ICollection<User> Users { get; set; }
         public virtual ICollection<Product> Products { get; set; }

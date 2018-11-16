@@ -12,7 +12,7 @@ namespace Webshop.Models
     {
         
         [Key]
-        public int UserID { get; set; }
+        public long UserID { get; set; }
         [Required,Display(Name = "Username")]
         public string Username { get; set; }
         [Required,Display(Name = "Password")]

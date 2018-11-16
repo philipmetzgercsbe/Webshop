@@ -9,12 +9,14 @@ namespace Webshop.Models
     public class Product
     {
         [Key]
-        public int ProductID;
-        [Required]
+        public long ProductID;
+        [Required,Display(Name = "Name")]
         public string Name { get; set; }
-        [Required]
+        [Required,Display(Name = "Image")]
         public string Imagepath { get; set; }
-        [Required]
+        [Required, Display(Name = "Price")]
         public double Price { get; set; }
+        [Required,Display(Name = "Stock")]
+        public int Stock { get; set; }
     }
 }
