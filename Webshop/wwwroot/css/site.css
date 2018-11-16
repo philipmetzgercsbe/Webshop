@@ -3,18 +3,19 @@ for details on configuring this project to bundle and minify static web assets. 
 body {
   margin:0;
   left:0;
+
 }
 
 /* Wrapping element */
 /* Set some basic padding to keep content from hitting the edges */
 .body-content {
-    
+    padding:50px;
 }
 
 /* Carousel */
 .carousel-caption p {
     font-size: 20px;
-    line-height: 1.4;
+    line-height: 14;
 }
 
 /* Make .svg files in the carousel display properly in older browsers */
@@ -29,6 +30,9 @@ body {
 @media only screen and (min-width:500px) {
     .container-test {
         display: flex;
+    }
+    .container-test1 {
+        display:flex;
     }
 }
 label {
@@ -74,13 +78,12 @@ label {
         display:none;
         background-color:#1f343f;
     }
-    .container-test a {
-        display:block;
-        border-bottom:1px solid #ccc;
-        margin:0;
-        padding:0;
-
-    }
+        .container-test a {
+            display: block;
+            border-bottom: 1px solid rgb(31,52,40);
+            margin: 0;
+            padding: 0;
+        }
     #toggle:checked + .container-test {
         display:block;
         
@@ -104,18 +107,46 @@ label {
 }
 .box3 {
     flex: 1;
-    margin-right: 10px;
+    margin-right: 0px;
 }
 .box4 {
     flex: 1;
     margin-right: 10px;
 }
-.b1 {
+.b1,.b2 {
     flex: 2;
     margin-right: 40px;
-}
-.b2 {
-    flex:2;
-    
+    font-size:12px;
+    color:blue;
 }
 
+.container-test1 {
+    
+    text-align: center;
+    color: white;
+}
+    .container-test1 h2 {
+        font-family: 'Merriweather', serif;
+    }
+    .container-test1 p {
+        padding:40px;
+        text-align:left;
+    }
+.bo1 {
+    flex: 1;
+    background-color: #454755;
+    height:350px;
+    margin:10px;
+}
+.bo2 {
+    flex: 1;
+    background-color: #7A6F73;
+    height:370px;
+    margin:10px;
+}
+.bo3 {
+    flex: 1;
+    background-color: #282F3F;
+    height: 390px;
+    margin: 10px;
+}
