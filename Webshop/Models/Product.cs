@@ -9,7 +9,7 @@ namespace Webshop.Models
     public class Product
     {
         [Key]
-        public int ProductID;
+        public long ProductID;
         [Required,Display(Name = "Name")]
         public string Name { get; set; }
         [Required,Display(Name = "Image")]
