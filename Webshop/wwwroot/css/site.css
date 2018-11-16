@@ -128,15 +128,18 @@ label {
     .container-test1 h2 {
         font-family: 'Merriweather', serif;
     }
-    .container-test1 p {
-        padding:40px;
-        text-align:left;
+    .container-test1 p, li {
+        font-family: 'Asap', sans-serif;
+        padding: 40px;
+        text-align: left;
+
     }
 .bo1 {
     flex: 1;
     background-color: #454755;
     height:350px;
     margin:10px;
+
 }
 .bo2 {
     flex: 1;
