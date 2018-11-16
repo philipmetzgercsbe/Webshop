@@ -11,7 +11,7 @@ namespace Webshop.Models
         [Key]
         public long CartID;
         //EF will create Product_Cart and Cart_User
-        public virtual ICollection<User> Users { get; set; }
-        public virtual ICollection<Product> Products { get; set; }
+        public virtual ICollection<User> Users { get; set; }  //Cart_UserFK
+        public virtual ICollection<Product> Products { get; set; } //Product_CartFK
     }
 }

@@ -17,6 +17,6 @@ namespace Webshop.Models
         public string Username { get; set; }
         [Required,Display(Name = "Password")]
         public string Password { get; set; }
-
+        
     }
 }
