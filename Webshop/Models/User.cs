@@ -13,9 +13,10 @@ namespace Webshop.Models
         
         [Key]
         public int UserID { get; set; }
-        [Required]
+        [Required,Display(Name = "Username")]
         public string Username { get; set; }
-        [Required]
+        [Required,Display(Name = "Password")]
         public string Password { get; set; }
+
     }
 }
