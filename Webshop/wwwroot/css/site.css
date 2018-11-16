@@ -1,14 +1,14 @@
 ﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification\ 
 for details on configuring this project to bundle and minify static web assets. */
 body {
-  
+  margin:0;
+  left:0;
 }
 
 /* Wrapping element */
 /* Set some basic padding to keep content from hitting the edges */
 .body-content {
-    padding-left: 15px;
-    padding-right: 15px;
+    
 }
 
 /* Carousel */
@@ -32,11 +32,22 @@ body {
     }
 }
 label {
-    margin: 0 40px 0 0;
+    margin: 0 0 0 0;
     font-size: 26px;
     line-height: 70px;
     display: none;
 }
+
+.container-test {
+    background-color:blue;
+    height:70px;
+    padding-left:15px;
+    padding-right:15px;
+    font-size:16px;
+    line-height:70px;
+    
+}
+
 
 #toggle {
     display: none;
@@ -44,47 +55,61 @@ label {
 /* Hide/rearrange for smaller screens */
 @media only screen and (max-width: 500px) {
     /* Hide captions */
-    
+
     label {
         display: block;
-        cursor:pointer;
+        cursor: pointer;
+        background-color: blue;
+        padding-left: 15px;
     }
     .container-test {
         text-align:center;
         width:60%;
         height:100px;
         display:none;
-        background-color:lightgrey;
+        background-color:blue;
     }
     .container-test a {
         display:block;
         border-bottom:1px solid #ccc;
         margin:0;
+        padding:0;
     }
     #toggle:checked + .container-test {
         display:block;
+        
     }
     
 }
 
 
 .box {
-    flex:1;
+    flex:10;
+    
     
 }
 .box1 {
     flex:1;
+    margin-right:10px;
 }
 .box2 {
-    flex:1;
+    flex: 1;
+    margin-right: 10px;
 }
 .box3 {
-    flex:1;
+    flex: 1;
+    margin-right: 10px;
+}
+.box4 {
+    flex: 1;
+    margin-right: 10px;
 }
 .b1 {
-    flex:1;
+    flex: 2;
+    margin-right: 40px;
 }
 .b2 {
-    flex:1;
+    flex:2;
+    
 }
 
