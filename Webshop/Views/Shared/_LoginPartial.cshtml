@@ -17,8 +17,14 @@
 }
 else
 {
-    <ul class="nav navbar-nav navbar-right">
-        <li><a asp-area="Identity" asp-page="/Account/Register">Register</a></li>
-        <li><a asp-area="Identity" asp-page="/Account/Login">Login</a></li>
+    <link href="~/css/site.css" rel="stylesheet" />
+    <ul class="container-test">
+        <div class="b1">
+            <li><a asp-area="Identity" asp-page="/Account/Register">Register</a></li>
+        </div>
+        <div class="b2">
+            <li><a asp-area="Identity" asp-page="/Account/Login">Login</a></li>
+        </div>
+        
     </ul>
 }
