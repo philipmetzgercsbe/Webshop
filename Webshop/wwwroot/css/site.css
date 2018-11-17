@@ -158,12 +158,14 @@ label {
 
 .blockquote {
     background: #f9f9f9;
-    border-left: 10px solid #ccc;
+    border-left: 10px solid orange;
     margin: 1.5em 10px;
     margin-right: 20px;
     margin-left: 20px;
     padding: 0.5em 10px;
-    quotes: "\201C""\201D""\2018""\2019";
+    quotes: none;
+    padding-left: 30px;
+    padding-bottom: 30px;
 }
     .blockquote:before {
         color: #ccc;
@@ -176,14 +178,19 @@ label {
     .blockquote p {
         display: inline;
     }
+    .blockquote h5 {
+        color:orange;
+    }
 .blockquote1 {
     background: #f9f9f9;
-    border-left: 10px solid #ccc;
+    border-left: 10px solid orange;
     margin: 1.5em 10px;
     margin-right: 20px;
     margin-left: 20px;
     padding: 0.5em 10px;
-    quotes: "\201C""\201D""\2018""\2019";
+    quotes: none;
+    padding-left: 30px;
+    padding-bottom:30px;
 }
 
     .blockquote1:before {
@@ -198,14 +205,19 @@ label {
     .blockquote1 p {
         display: inline;
     }
+    .blockquote1 h5 {
+        color:orange;
+    }
 .blockquote2 {
     background: #f9f9f9;
-    border-left: 10px solid #ccc;
+    border-left: 10px solid orange;
     margin: 1.5em 10px;
     margin-right: 20px;
     margin-left: 20px;
-    padding: 0.5em 10px;
-    quotes: "\201C""\201D""\2018""\2019";
+    padding: 0.5em;
+    padding-left: 30px;
+    quotes: none;
+    padding-bottom: 30px;
 }
 
     .blockquote2:before {
@@ -220,7 +232,9 @@ label {
     .blockquote2 p {
         display: inline;
     }
-
+    .blockquote2 h5 {
+        color:orange;
+    }
 .h31 {
     font-family: 'Source Sans Pro', sans-serif;
     background-color: #3E4E59;
@@ -230,7 +244,11 @@ label {
 }
 .bq {
     margin:0 5% 0 5%;
+    
 }
 h6 {
     text-align:center;
+}
+a:hover {
+    color:orange;
 }
