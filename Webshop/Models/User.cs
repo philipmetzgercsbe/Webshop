@@ -13,7 +13,7 @@ namespace Webshop.Models
         
         
         public long UserID { get; set; }
-       
         
+
     }
 }
