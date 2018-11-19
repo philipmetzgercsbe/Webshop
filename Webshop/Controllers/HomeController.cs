@@ -23,9 +23,9 @@ namespace Webshop.Controllers
             return View();
         }
 
-        public IActionResult Contact()
+        public IActionResult Product()
         {
-            ViewData["Message"] = "Your contact page.";
+            ViewData["Message"] = "Products";
 
             return View();
         }
