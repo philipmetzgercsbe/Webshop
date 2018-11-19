@@ -285,3 +285,10 @@ a:hover {
         width: 200px;
         
     }
+    .form-group button {
+        width:200px;
+        height:25px;
+        border:none;
+        color:white;
+        background-color:#1f343f;
+    }
