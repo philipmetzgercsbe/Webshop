@@ -34,8 +34,9 @@ body {
     .container-test1 {
         display:flex;
     }
+    
 }
-label {
+.nav label {
     margin: 0 0 0 0;
     font-size: 26px;
     line-height: 70px;
@@ -64,7 +65,7 @@ label {
 @media only screen and (max-width: 500px) {
     /* Hide captions */
 
-    label {
+    .nav label {
         display: block;
         cursor: pointer;
         background-color: #1f343f;
@@ -89,6 +90,8 @@ label {
         
     }
     
+    
+    
 }
 
 
@@ -109,10 +112,7 @@ label {
     flex: 1;
     margin-right: 0px;
 }
-.box4 {
-    flex: 1;
-    margin-right: 10px;
-}
+
 .b1,.b2 {
     flex: 2;
     margin-right: 40px;
@@ -124,6 +124,7 @@ label {
     
     text-align: center;
     color: white;
+
 }
     .container-test1 h2 {
         font-family: 'Merriweather', serif;
@@ -131,8 +132,9 @@ label {
     .container-test1 p, li {
         font-family: 'Asap', sans-serif;
         padding: 40px;
-        text-align: left;
-
+        text-align:left;
+        /*dispaly:inline*/
+        
     }
 .bo1 {
     flex: 1;
@@ -153,3 +155,133 @@ label {
     height: 390px;
     margin: 10px;
 }
+
+.blockquote {
+    background: #f9f9f9;
+    border-left: 10px solid orange;
+    margin: 1.5em 10px;
+    margin-right: 20px;
+    margin-left: 20px;
+    padding: 0.5em 10px;
+    quotes: none;
+    padding-left: 30px;
+    padding-bottom: 30px;
+}
+    .blockquote:before {
+        color: #ccc;
+        content: open-quote;
+        font-size: 4em;
+        line-height: 0.1em;
+        margin-right: 0.55em;
+        vertical-align: -0.4em;
+    }
+    .blockquote p {
+        display: inline;
+    }
+    .blockquote h5 {
+        color:orange;
+    }
+.blockquote1 {
+    background: #f9f9f9;
+    border-left: 10px solid orange;
+    margin: 1.5em 10px;
+    margin-right: 20px;
+    margin-left: 20px;
+    padding: 0.5em 10px;
+    quotes: none;
+    padding-left: 30px;
+    padding-bottom:30px;
+}
+
+    .blockquote1:before {
+        color: #ccc;
+        content: open-quote;
+        font-size: 4em;
+        line-height: 0.1em;
+        margin-right: 0.55em;
+        vertical-align: -0.4em;
+    }
+
+    .blockquote1 p {
+        display: inline;
+    }
+    .blockquote1 h5 {
+        color:orange;
+    }
+.blockquote2 {
+    background: #f9f9f9;
+    border-left: 10px solid orange;
+    margin: 1.5em 10px;
+    margin-right: 20px;
+    margin-left: 20px;
+    padding: 0.5em;
+    padding-left: 30px;
+    quotes: none;
+    padding-bottom: 30px;
+}
+
+    .blockquote2:before {
+        color: #ccc;
+        content: open-quote;
+        font-size: 4em;
+        line-height: 0.1em;
+        margin-right: 0.55em;
+        vertical-align: -0.4em;
+    }
+
+    .blockquote2 p {
+        display: inline;
+    }
+    .blockquote2 h5 {
+        color:orange;
+    }
+.h31 {
+    font-family: 'Source Sans Pro', sans-serif;
+    background-color: #3E4E59;
+    text-align: center;
+    font-size: 40px;
+    border-left: solid #576E7D 20px;
+}
+.bq {
+    margin:0 5% 0 5%;
+    
+}
+h6 {
+    text-align:center;
+}
+a:hover {
+    color:orange;
+}
+.form-group-layout {
+    
+    padding:5%;
+    
+    text-align: center;
+}
+
+    .form-group-layout input {
+        width: 200px;
+        height: 25px;
+        border: none;
+        border-bottom: 1px solid #ccc;
+        margin-bottom: 25px;
+    }
+    :focus{outline:none}
+.form-control1 ~ .focus-border {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 20px;
+    background-color: orange;
+    transition: 0.4s;
+}
+.form-control1:focus ~ .focus-border {
+    width: 100%;
+    transition: 0.4s;
+}
+    .form-group-layout label {
+        color: black;
+        width: 200px;
+        
+    }
