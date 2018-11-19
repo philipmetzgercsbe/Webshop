@@ -16,7 +16,7 @@ namespace Webshop.Models
         [Display(Name = "Username"),StringLength(256)]
         public string UserName { get; set; }
         [DataType(DataType.Password),StringLength(200)]
-        private string Password { get; set; }
+        public string Password { get; set; }
         
     }
 }
