@@ -73,7 +73,7 @@ body {
     }
     .container-test {
         text-align:center;
-        width:60%;
+        width:100%;
         height:150px;
         line-height:20px;
         display:none;
@@ -291,4 +291,27 @@ a:hover {
         border:none;
         color:white;
         background-color:#1f343f;
+    }
+    .person1 {
+        text-align:center;
+        margin:5% 20% 5% 20%;
+    }
+.hr1 {
+    overflow: visible; /* For IE */
+    padding: 0;
+    border: none;
+    border-top: medium double #333;
+    color: #333;
+    text-align: center;
+    margin:0 20% 0 20%;
+}
+
+    .hr1:after {
+        content: "=";
+        display: inline-block;
+        position: relative;
+        top: -0.7em;
+        font-size: 1.5em;
+        padding: 0 0.25em;
+        background: white;
     }
