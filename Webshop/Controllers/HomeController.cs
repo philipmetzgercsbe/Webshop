@@ -25,7 +25,7 @@ namespace Webshop.Controllers
 
         public IActionResult Product()
         {
-            ViewData["Message"] = "Products";
+            ViewData["Message"] = "Our current available Products";
 
             return View();
         }
