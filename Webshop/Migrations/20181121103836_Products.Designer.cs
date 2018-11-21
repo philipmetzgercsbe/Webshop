@@ -237,7 +237,7 @@ namespace Webshop.Migrations
                     b.ToTable("Products");
 
                     b.HasData(
-                        new { ProductID = 1L, Description = "Aut ex minima nostrum commodi aut.
+                        new { ProductID = 1L, Description = @"Aut ex minima nostrum commodi aut.
 Eligendi atque inventore repellendus voluptas in minus.
 Neque aliquam dolor doloribus.
 Ex magnam molestias ut aut tempora qui enim.

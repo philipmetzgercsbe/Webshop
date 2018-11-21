@@ -1,6 +1,10 @@
-﻿@{
+﻿@model Webshop.Models.ProductViewModel
+@{
     ViewData["Title"] = "Products";
+
+
    
+
 }
 
 <h2>@ViewData["Title"]</h2>
@@ -12,8 +16,18 @@
     <abbr title="Phone">P:</abbr>
     425.555.0100
 </address>
+    @{
+        var properties1 = typeof(ProductViewModel).GetProperties().ToList();
 
-<address>
-    <strong>Support:</strong> <a href="mailto:Support@example.com">Support@example.com</a><br />
-    <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
-</address>
+        foreach (var data in properties1)
+        {
+            <div class="content">
+                <h3>@data.</h3>
+            </div>
+        }
+    }
+
+    <address>
+        <strong>Support:</strong> <a href="mailto:Support@example.com">Support@example.com</a><br />
+        <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
+    </address>

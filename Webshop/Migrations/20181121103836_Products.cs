@@ -44,7 +44,7 @@ namespace Webshop.Migrations
                     { 3L, null, "Voluptatem error rerum molestiae necessitatibus quaerat in.", "http://lorempixel.com/640/480/food", "ad", 15.746378233538184, 828 },
                     { 2L, null, "Ducimus odio inventore sunt rerum id officiis aut. Est voluptatibus beatae eos pariatur perferendis corrupti. Porro nostrum amet illo.", "http://lorempixel.com/640/480/abstract", "eos", 35.206429959370958, 363 },
                     { 9L, null, "Officiis deleniti delectus ad nam ut. Optio rerum quo eveniet et. Praesentium repellat vitae adipisci. Eum eius qui mollitia consequatur. Eius omnis voluptatem harum aut eveniet numquam.", "http://lorempixel.com/640/480/food", "ipsa", 170.41591704237084, 452 },
-                    { 1L, null, "Aut ex minima nostrum commodi aut.
+                    { 1L, null, @"Aut ex minima nostrum commodi aut.
                 Eligendi atque inventore repellendus voluptas in minus.
                 Neque aliquam dolor doloribus.
                 Ex magnam molestias ut aut tempora qui enim.
