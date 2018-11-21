@@ -8,12 +8,14 @@ namespace Webshop.Models
 {
     public class Product
     {
-       
+        [Key]
         public long ProductID { get; set; }
         [Required,Display(Name = "Name")]
         public string Name { get; set; }
         [Required,Display(Name = "Image")]
         public string Imagepath { get; set; }
+        [Required,StringLength(500),Display(Name = "Description")]
+        public string Description { get; set; }
         [Required, Display(Name = "Price")]
         public double Price { get; set; }
         [Required,Display(Name = "Stock")]

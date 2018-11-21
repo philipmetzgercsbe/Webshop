@@ -36,6 +36,7 @@ namespace Webshop.Models
                 .RuleFor(a => a.ProductID, () => product.ProductID++)
                 .RuleFor(a => a.Name, t => t.Lorem.Word())
                 .RuleFor(a => a.Imagepath, t => t.Image.Image())
+                .RuleFor(a => a.Description, t => t.Lorem.Text())
                 .RuleFor(a => a.Price, t => t.Random.Double(1, 250.0))
                 .RuleFor(a => a.Stock, t => t.Random.Int(1, 1000));
 
@@ -56,7 +57,7 @@ namespace Webshop.Models
                 TestProducts.Add(new
                 {
 
-                    ProductId = testProduct.ProductID,
+                    ProductID = testProduct.ProductID,
                     ProductName = testProduct.Name
                 });
             }

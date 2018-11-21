@@ -15,12 +15,6 @@ namespace Webshop.Areas.Identity
         public void Configure(IWebHostBuilder builder)
         {
             builder.ConfigureServices((context, services) => {
-                services.AddDbContext<WebshopContext>(options =>
-                    options.UseSqlServer(
-                        context.Configuration.GetConnectionString("WebshopContextConnection")));
-
-                services.AddDefaultIdentity<IdentityUser>()
-                    .AddEntityFrameworkStores<WebshopContext>();
             });
         }
     }
