@@ -20,5 +20,7 @@ namespace Webshop.Models
         [Range(1, 500)]
         public int ProductStock { get; set; }
 
+        private ICollection<Product> Products { get; set; }
+
     }
 }
