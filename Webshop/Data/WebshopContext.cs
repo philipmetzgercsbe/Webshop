@@ -12,6 +12,7 @@ namespace Webshop.Models
 {
     public class WebshopContext : IdentityDbContext<IdentityUser>
     {
+        
         public WebshopContext(DbContextOptions<WebshopContext> options)
             : base(options)
         {

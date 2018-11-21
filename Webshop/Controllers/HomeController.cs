@@ -10,6 +10,13 @@ namespace Webshop.Controllers
 {
     public class HomeController : Controller
     {
+        private readonly WebshopContext _context;
+
+        public HomeController(WebshopContext context)
+        {
+            _context = context;
+        }
+
         [HttpGet]
         public IActionResult Index()
         {

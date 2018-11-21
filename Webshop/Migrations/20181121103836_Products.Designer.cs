@@ -274,7 +274,7 @@ Molestiae et quam ab alias ut in.", Imagepath = "http://lorempixel.com/640/480/c
                         new { Id = "1b3438d6-7fcb-4cf4-b94c-8d9c8de07ec5", AccessFailedCount = 0, EmailConfirmed = true, LockoutEnabled = false, PhoneNumberConfirmed = true, TwoFactorEnabled = false, UserID = 7L },
                         new { Id = "14a695e7-e7b5-4ad9-b2cd-6084247031e9", AccessFailedCount = 0, EmailConfirmed = true, LockoutEnabled = false, PhoneNumberConfirmed = true, TwoFactorEnabled = false, UserID = 8L },
                         new { Id = "16763d1b-1d19-4a73-909f-e8b063287814", AccessFailedCount = 0, EmailConfirmed = true, LockoutEnabled = false, PhoneNumberConfirmed = true, TwoFactorEnabled = false, UserID = 9L },
-                        new { Id = "6b55b147-7fa1-4ef3-b3eb-38aa6bcc0e12", AccessFailedCount = 0, EmailConfirmed = true, LockoutEnabled = false, PhoneNumberConfirmed = true, TwoFactorEnabled = false, UserID = 10L }
+                        new { Id = "6b55b147-7fa1-4ef3-b3eb-38aa6bcc0e12", AccessFailedCount = 0, EmailConfirmed = true, LockoutEnabled = false, PhoneNumberConfirmed = true, TwoFactorEnabled = false, UserID = 10L}
                     );
                 });
 

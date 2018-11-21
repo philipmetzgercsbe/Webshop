@@ -1,12 +1,15 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Hosting.Internal;
+using Microsoft.EntityFrameworkCore.ChangeTracking;
 
 namespace Webshop.Models
 {
-    public class ProductViewModel
+    public class ProductViewModel 
     {
         //Per request empty
         //This VM displays Name -> Image -> Product description -> Price in Currency -> Stock
@@ -20,7 +23,8 @@ namespace Webshop.Models
         [Range(1, 500)]
         public int ProductStock { get; set; }
 
-        private ICollection<Product> Products { get; set; }
+        public List<Product> Products;
+
 
     }
 }

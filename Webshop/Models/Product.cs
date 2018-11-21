@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -20,5 +21,7 @@ namespace Webshop.Models
         public double Price { get; set; }
         [Required,Display(Name = "Stock")]
         public int Stock { get; set; }
+        
+        
     }
 }
