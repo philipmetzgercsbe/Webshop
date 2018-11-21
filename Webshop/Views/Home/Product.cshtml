@@ -21,12 +21,16 @@
 
         foreach (var data in Model.Products)
         {
+
             <div class="content">
-                <h3>@data.Name</h3>
-                <img src="@data.Imagepath" />
-                <p>@data.Description</p>
-                <p>@data.Price</p>
-                <p>@data.Stock</p>
+                <div class="bb1">
+                    <h3>@data.Name</h3>
+                    <img src="C:\\Users\\vmadmin\\Source\\Repos\\philipmetzgercsbe\\Webshop\\Webshop\\wwwroot\\can.jpg"/>
+                    <p>@data.Description</p>
+                    <p>@data.Price</p>
+                    <p>@data.Stock</p>
+                </div>
+                
             </div>
         }
     }

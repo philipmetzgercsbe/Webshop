@@ -315,3 +315,9 @@ a:hover {
         padding: 0 0.25em;
         background: white;
     }
+    .content {
+        border:1px solid black;
+        display:flex;
+        flex-direction:column;
+        flex-wrap:wrap-reverse;
+    }
