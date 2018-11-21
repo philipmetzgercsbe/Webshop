@@ -23,7 +23,7 @@ namespace Webshop.Models
         [Range(1, 500)]
         public int ProductStock { get; set; }
 
-        public List<Product> Products;
+        public List<Product> Products = new List<Product>();
 
 
     }

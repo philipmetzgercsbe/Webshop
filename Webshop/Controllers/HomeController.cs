@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Webshop.Models;
 
 namespace Webshop.Controllers
@@ -33,9 +34,11 @@ namespace Webshop.Controllers
         public IActionResult Product()
         {
             ViewData["Message"] = "Our current available Products";
-          
-          
-            return View();
+            var Products = _context.Products.ToList();
+            ProductViewModel viewModel = new ProductViewModel();
+            viewModel.Products = Products;
+
+            return View(viewModel);
         }
 
         public IActionResult Privacy()
