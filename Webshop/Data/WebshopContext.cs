@@ -33,8 +33,8 @@ namespace Webshop.Models
             var ProductID = 1;
 
             var ProductFaker = new Faker<Product>()
-                .RuleFor(a => a.ProductID, () => product.ProductID++)
-                .RuleFor(a => a.Name, t => t.Lorem.Word())
+                .RuleFor(a => a.ProductID, () => ProductID++)
+                .RuleFor(a => a.Name, t => t.Commerce.ProductName())
                 .RuleFor(a => a.Imagepath, t => t.Image.Image())
                 .RuleFor(a => a.Description, t => t.Lorem.Text())
                 .RuleFor(a => a.Price, t => t.Random.Double(1, 250.0))
@@ -52,13 +52,17 @@ namespace Webshop.Models
             var TestProducts = new List<dynamic>();
             var rnd = new Random();
 
-            foreach (var testProduct in ProductFaker.Generate(10)) //10 Products
+            foreach (var products in ProductFaker.Generate(10)) //10 Products
             {
                 TestProducts.Add(new
                 {
 
-                    ProductID = testProduct.ProductID,
-                    ProductName = testProduct.Name
+                    ProductID = products.ProductID,
+                    Name = products.Name,
+                    Imagepath = products.Imagepath,
+                    Description = products.Description,
+                    Price = products.Price,
+                    Stock = products.Stock
                 });
             }
 
@@ -66,10 +70,16 @@ namespace Webshop.Models
             {
                 TestUsers.Add(new
                 {
+                    UserID = user.UserID,
                     Id = user.Id,
-                    Email = user.Email,
-                    UserName = user.UserName,
-                    Password = user.PasswordHash
+                    email = user.Email,
+                    userName = user.UserName,
+                    password = user.PasswordHash,
+                    AccessFailedCount = 0,
+                    EmailConfirmed = true,
+                    LockoutEnabled = false,
+                    PhoneNumberConfirmed = true,
+                    TwoFactorEnabled = false
 
                 });
             }
