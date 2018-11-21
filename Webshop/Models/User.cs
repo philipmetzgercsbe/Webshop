@@ -11,7 +11,7 @@ namespace Webshop.Models
     public class User : IdentityUser
     {
         
-      
+
         public long UserID { get; set; }
         
 
