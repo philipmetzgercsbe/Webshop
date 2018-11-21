@@ -35,7 +35,7 @@ namespace Webshop
             });
             services.AddDbContext<WebshopContext>(options =>
                 options.UseSqlServer(
-                    Configuration.GetConnectionString("WebshopContext")));
+                    Configuration.GetConnectionString("WebshopContextConnection")));
             services.AddDefaultIdentity<IdentityUser>()
                 .AddEntityFrameworkStores<WebshopContext>();
 

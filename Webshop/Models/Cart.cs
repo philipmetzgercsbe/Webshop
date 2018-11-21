@@ -8,7 +8,7 @@ namespace Webshop.Models
 {
     public class Cart
     {
-        [Key]
+        
         public long CartID { get; set; }
         //EF will create Product_Cart and Cart_User
         public User User { get; set; }  //Cart_UserFK

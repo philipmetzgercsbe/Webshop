@@ -8,7 +8,7 @@ namespace Webshop.Models
 {
     public class Product
     {
-        [Key]
+       
         public long ProductID { get; set; }
         [Required,Display(Name = "Name")]
         public string Name { get; set; }

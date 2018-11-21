@@ -33,8 +33,8 @@ namespace Webshop.Models
             var ProductID = 1;
 
             var ProductFaker = new Faker<Product>()
-                .RuleFor(a => a.ProductID, () =>ProductID++)
-                .RuleFor(a => a.Name, t => t.Lorem.Word())
+                .RuleFor(a => a.ProductID, () => ProductID++)
+                .RuleFor(a => a.Name, t => t.Commerce.ProductName())
                 .RuleFor(a => a.Imagepath, t => t.Image.Image())
                 .RuleFor(a => a.Description, t => t.Lorem.Text())
                 .RuleFor(a => a.Price, t => t.Random.Double(1, 250.0))
@@ -52,18 +52,17 @@ namespace Webshop.Models
             var TestProducts = new List<dynamic>();
             var rnd = new Random();
 
-            foreach (var testProduct in ProductFaker.Generate(10)) //10 Products
+            foreach (var products in ProductFaker.Generate(10)) //10 Products
             {
                 TestProducts.Add(new
                 {
 
-                    ProductID = testProduct.ProductID,
-                    Name = testProduct.Name,
-                    Imagepath = testProduct.Imagepath,
-                    Description = testProduct.Description,
-                    Price = testProduct.Price,
-                    Stock = testProduct.Stock
-                   
+                    ProductID = products.ProductID,
+                    Name = products.Name,
+                    Imagepath = products.Imagepath,
+                    Description = products.Description,
+                    Price = products.Price,
+                    Stock = products.Stock
                 });
             }
 
@@ -75,12 +74,12 @@ namespace Webshop.Models
                     Id = user.Id,
                     email = user.Email,
                     userName = user.UserName,
-                    Password = user.PasswordHash,
+                    password = user.PasswordHash,
                     AccessFailedCount = 0,
                     EmailConfirmed = true,
                     LockoutEnabled = false,
                     PhoneNumberConfirmed = true,
-                    TwoFactorEnabled = false,
+                    TwoFactorEnabled = false
 
                 });
             }
