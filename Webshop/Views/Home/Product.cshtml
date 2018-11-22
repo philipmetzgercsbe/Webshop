@@ -23,10 +23,16 @@
             <div class="content">
                 <div class="bb1">
                     <h3><label asp-for="Name">@data.Name</label></h3>
-                    <img src="~/images/can.jpg" width="50"/><br /> <!--@data.Imagepath-->
+                    <img src="~/images/can.jpg" width="50" /><br /> <!--@data.Imagepath-->
+                    <hr />
                     <p>@data.Description</p><br />
-                    <p>@data.Price</p><br />
-                    <p>@data.Stock</p>
+
+                    <p><label><b>Price:</b></label><i> @data.Price</i></p><br />
+                    <p><label><b>Stock:</b></label><i> @data.Stock</i></p><br />
+
+                    <input type="number" min="1" max="@data.Stock" placeholder="1" /><br />
+
+                    <button >Buy</button>
                 </div>
 
             </div>
