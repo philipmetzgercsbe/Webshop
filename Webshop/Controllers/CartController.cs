@@ -30,10 +30,10 @@ namespace Webshop.Controllers
             return View(viewModel);
         }
 
-
+        [HttpPost]
         public IActionResult IncreaseAmount(int id)
         {
-          
+           CartViewModel viewModel = new CartViewModel();
             
             var cart =  _context.Carts
                 .FirstOrDefault(m => m.CartID == id);
@@ -51,15 +51,16 @@ namespace Webshop.Controllers
             if ( productAmount < productStock )
             {
                
-               return productAmount++;
-            }else if (productAmount == productStock)
+               viewModel.productAmount++;
+            }
+            if (productAmount == productStock)
             {
                 return 
             }
             
 
         }
-
+        //Do the same for DecreaseAmount
         
     }
 }

@@ -12,7 +12,9 @@ namespace Webshop.Models
         //TODO: CartController with AddCart BuyCart ChangeAmount(Product product) 
         //TODO: CSHTML ViewCart Displays all items in Cart(User user)
         public List<Product> Products { get; set; }
-        [Range(1,Int32.MaxValue)]
+        [Range(1,1000),Display(Name = "Amount")]
+        public int ProductAmount { get; set; }
+        [Range(1,Int32.MaxValue),Display(Name = "Items in Cart")]
         public int AmountOfItems { get; set; }
         [Display(Name = "Totalprice"),DataType(DataType.Currency)]
         public double TotalPrice { get; set; }
