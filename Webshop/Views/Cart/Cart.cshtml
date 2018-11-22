@@ -1,9 +1,24 @@
 ﻿@model Webshop.Models.CartViewModel
 @{
     ViewData["Title"] = "Cart";
+    
 }
 
+@foreach (var prod in Model.Products)
+{
+   //Display instead of prod.Stock model.ProductAmount
+    <div class="content">
+        <div class="bb1">
+            <h3><label asp-for="@prod.Name">@prod.Name</label></h3>
+            <img src="~/images/can.jpg" width="50"/><br /> <!--@prod.Imagepath-->
+            <p>@prod.Description</p><br />
+            <p>@prod.Price</p><br />
+            <p>@prod.</p>
+        </div>
 
+    </div>
+}
 
 <h2>Cart</h2>
 
+<button type="submit" name="form-btn cart"></button>

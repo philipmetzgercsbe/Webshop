@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Internal;
@@ -23,9 +24,42 @@ namespace Webshop.Controllers
         {
             CartViewModel viewModel = new CartViewModel();
             //Test Query of User Cart
-//            viewModel.Products = _context.Carts.Include(a => a.Products).Where(a => a.User == a.User).Join; 
+       
+            viewModel.Products = _context.Carts.Include(a => a.Products).Where(a => a.User.UserID == User.Identity.Name).Join("Products").Where(; 
                    
-            return View();
+            return View(viewModel);
         }
+
+
+        public IActionResult IncreaseAmount(int id)
+        {
+          
+            
+            var cart =  _context.Carts
+                .FirstOrDefault(m => m.CartID == id);
+            var product = _context.Products
+                .FirstOrDefault(m => m.ProductID == cart.ProductFK);
+
+            if (cart == null)
+            {
+                ViewData["Message"] = "No Items in your Cart";
+                
+            }
+
+            var productAmount = cart.ProductAmount;
+            var productStock = product.Stock;
+            if ( productAmount < productStock )
+            {
+               
+               return productAmount++;
+            }else if (productAmount == productStock)
+            {
+                return 
+            }
+            
+
+        }
+
+        
     }
 }
