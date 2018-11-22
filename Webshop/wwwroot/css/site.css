@@ -34,6 +34,11 @@ body {
     .container-test1 {
         display:flex;
     }
+    .overc {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
     
 }
 .nav label {
@@ -89,6 +94,8 @@ body {
         display:block;
         
     }
+  
+
     
     
     
@@ -315,9 +322,11 @@ a:hover {
         padding: 0 0.25em;
         background: white;
     }
-    .content {
-        border:1px solid black;
-        display:flex;
-        flex-direction:column;
-        flex-wrap:wrap-reverse;
-    }
+   
+
+.content {
+   flex:1;
+}
+.content p {
+    display: inline;
+}
