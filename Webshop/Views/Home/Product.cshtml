@@ -10,28 +10,30 @@
 <h2>@ViewData["Title"]</h2>
 <h3>@ViewData["Message"]</h3>
 
-<address>
-    One Microsoft Way<br />
-    Redmond, WA 98052-6399<br />
-    <abbr title="Phone">P:</abbr>
-    425.555.0100
-</address>
+<hr />
+
+<div class="overc">
+
     @{
-        
+
 
         foreach (var data in Model.Products)
         {
+
             <div class="content">
-                <h3>@data.Name</h3>
-                <img src="@data.Imagepath" />
-                <p>@data.Description</p>
-                <p>@data.Price</p>
-                <p>@data.Stock</p>
+                <div class="bb1">
+                    <h3><label asp-for="Name">@data.Name</label></h3>
+                    <img src="~/images/can.jpg" width="50"/><br /> <!--@data.Imagepath-->
+                    <p>@data.Description</p><br />
+                    <p>@data.Price</p><br />
+                    <p>@data.Stock</p>
+                </div>
+
             </div>
         }
     }
-
+</div>
     <address>
-        <strong>Support:</strong> <a href="mailto:Support@example.com">Support@example.com</a><br />
-        <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
+        <strong>Support:</strong> <a href="mailto:Support@homebrew.com">Support@homebrew.com</a><br />
+        <strong>Marketing:</strong> <a href="mailto:Marketing@homebrew.com">Marketing@homebrew.com</a>
     </address>
