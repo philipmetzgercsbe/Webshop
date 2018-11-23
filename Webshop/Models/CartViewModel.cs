@@ -15,8 +15,8 @@ namespace Webshop.Models
         [Range(1,1000),Display(Name = "Amount")]
         public int ProductAmount { get; set; }
         [Range(1,Int32.MaxValue),Display(Name = "Items in Cart")]
-        public int AmountOfItems { get; set; }
+        public int AmountOfItems { get; set; } //this property displays Products.count 
         [Display(Name = "Totalprice"),DataType(DataType.Currency)]
-        public double TotalPrice { get; set; }
+        public double TotalPrice { get; set; } //foreach item.price in cart Totalprice += item.price
     }
 }

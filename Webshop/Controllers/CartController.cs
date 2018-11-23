@@ -23,7 +23,8 @@ namespace Webshop.Controllers
         public IActionResult Cart()
         {
             CartViewModel viewModel = new CartViewModel();
-            //Test Query of User Cart
+            //Requires User from UserManager
+            //Pure SQL Query = SELECT id,productfk from Cart where userFK = userID join Products on ProductFK where ProductID = productFK 
        
             viewModel.Products = _context.Carts.Include(a => a.Products).Where(a => a.User.UserID == User.Identity.Name).Join("Products").Where(; 
                    
