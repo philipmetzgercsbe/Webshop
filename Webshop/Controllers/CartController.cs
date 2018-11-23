@@ -8,6 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Internal;
 using Webshop.Migrations;
 using Webshop.Models;
+using Product = Webshop.Models.Product;
 
 namespace Webshop.Controllers
 {
@@ -15,25 +16,29 @@ namespace Webshop.Controllers
     {
 
         private readonly WebshopContext _context;
+       
 
         public CartController(WebshopContext context)
         {
             _context = context;
         }
-        /*
+       
         public IActionResult Cart()
         {
             CartViewModel viewModel = new CartViewModel();
-            //Requires User from UserManager
-            //Pure SQL Query = SELECT id,productfk from Cart where userFK = userID join Products on ProductFK where ProductID = productFK 
-       
-            viewModel.Products = _context.Carts.Include(a => a.Products).Where(a => a.User.UserID == User.Identity.Name).Join("Products").Where(; 
-                   
+
+           
+            var carts = _context.Carts.Include(a => a.Products).Where(a => a.User.UserID == viewModel.userId).ToList();
+            viewModel.Products = carts[0].Products.ToList(); //null check nicht vergessen
+            if (viewModel.Products == null)
+            {
+                ViewData["Message"] = "No items in your cart";
+            }
             return View(viewModel);
         }
 
         [HttpPost]
-        public IActionResult IncreaseAmount(int id)
+        public IActionResult ChangeAmount(int id,int newAmount)
         {
            CartViewModel viewModel = new CartViewModel();
             
@@ -48,21 +53,23 @@ namespace Webshop.Controllers
                 
             }
 
-            var productAmount = cart.ProductAmount;
-            var productStock = product.Stock;
-            if ( productAmount < productStock )
+            if (cart != null)
             {
-               
-               viewModel.productAmount++;
-            }
-            if (productAmount == productStock)
-            {
-                return 
-            }
-            
+                var productAmount = cart.ProductAmount;
+                var productStock = product.Stock;
+                if ( productAmount <= productStock && productAmount > 0)
+                {               
+                        viewModel.ProductAmount++;
+                }
+                if (productAmount == productStock)
+                {
+                    ViewData["Message"] = "No Items in your Cart";
+                }
 
+                return newAmount;
+            }
         }
         //Do the same for DecreaseAmount
-        */
+        
     }
 }

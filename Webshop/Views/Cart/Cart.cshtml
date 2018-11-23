@@ -1,24 +1,33 @@
-﻿@model Webshop.Models.CartViewModel
+﻿@using Microsoft.AspNetCore.Identity
+@model Webshop.Models.CartViewModel
 @{
     ViewData["Title"] = "Cart";
+    Model.userId = long.Parse(SignInManager.UserManager.GetUserId(User));
+    Model.ProductAmount = Model.Products.Find(a => a.ProductID == Model.ProductAmount);
+}
+@inject SignInManager<IdentityUser> SignInManager;
+
+@{if (SignInManager.IsSignedIn(User))
+  { 
     
-}
+    foreach (var prod in Model.Products)
+    {
+        //Display instead of prod.Stock model.ProductAmount
+          <div class="content">
+              <div class="bb1">
+                  <h3><label asp-for="@prod.Name">@prod.Name</label></h3>
+                  <img src="~/images/can.jpg" width="50"/><br/> <!--@prod.Imagepath-->
+                  <p>@prod.Description</p><br/>
+                  <p>@prod.Price</p><br/>
+                  <p>@Model.ProductAmount</p>
+              </div>
 
-@foreach (var prod in Model.Products)
-{
-   //Display instead of prod.Stock model.ProductAmount
-    <div class="content">
-        <div class="bb1">
-            <h3><label asp-for="@prod.Name">@prod.Name</label></h3>
-            <img src="~/images/can.jpg" width="50"/><br /> <!--@prod.Imagepath-->
-            <p>@prod.Description</p><br />
-            <p>@prod.Price</p><br />
-            <p>@prod.</p>
-        </div>
+          </div>
 
-    </div>
-}
+      }
+  }
 
-<h2>Cart</h2>
 
-<button type="submit" name="form-btn cart"></button>
+    <h2>Cart</h2>
+
+<button type="submit" name="form-btn cart">Buy</button>
