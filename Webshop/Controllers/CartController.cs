@@ -46,7 +46,7 @@ namespace Webshop.Controllers
             return View(viewModel);
         }
 
-        [HttpPost]
+        [HttpGet]
         public IActionResult ChangeAmount(int id, int newAmount, bool add)
         {
             CartViewModel viewModel = new CartViewModel();

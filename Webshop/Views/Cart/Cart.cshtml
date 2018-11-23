@@ -17,16 +17,19 @@
         foreach (var prod in Model.Products)
         {
             //Display instead of prod.Stock model.ProductAmount
-            <div class="content">
-                <div class="bb1">
-                    <h3><label asp-for="@prod.Name">@prod.Name</label></h3>
-                    <img src="~/images/can.jpg" width="50"/><br/> <!--@prod.Imagepath-->
-                    <p>@prod.Description</p><br/>
-                    <p>@prod.Price</p><br/>
-                    <p>@Model.ProductAmount</p>
-                </div>
-
-            </div>
+<div class="content">
+    <div class="bb1">
+        <h3><label asp-for="@prod.Name">@prod.Name</label></h3>
+        <img src="~/images/can.jpg" width="50" /><br /> <!--@prod.Imagepath-->
+        <p>@prod.Description</p><br />
+        <p>@prod.Price</p><br />
+        <p>@Model.ProductAmount</p>
+    </div>
+    <div class="btn-group">
+    <button type="button" name="addProduct" onclick="location.href = '@Url.Action("ChangeAmount", "Cart")'"><img src="images/plus.png" /></button>
+        <button type="button" name="addProduct" onclick="location.href = '@Url.Action("ChangeAmount", "Cart")'"><img src="images/subtract.png" /></button>
+    </div><!--Probably the wrong Interaction here but at least it exists-->
+</div>
 
         }
     }
