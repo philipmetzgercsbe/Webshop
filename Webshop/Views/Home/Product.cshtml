@@ -22,11 +22,12 @@
 
             <div class="content">
                 <div class="bb1">
-                    <h3><label asp-for="Name">@data.Name</label></h3>
+                    <h3>@data.Name</h3>
                     <img src="~/images/can.jpg" width="50" /><br /> <!--@data.Imagepath-->
-                    <hr />
-                    <p>@data.Description</p><br />
-
+                    <hr class="hr2"/>
+                    <div class="desc">
+                    <i style="font-family:12px;">Desc:</i><p>@data.Description</p><br />
+                        </div>
                     <p><label><b>Price:</b></label><i> @data.Price</i></p><br />
                     <p><label><b>Stock:</b></label><i> @data.Stock</i></p><br />
 

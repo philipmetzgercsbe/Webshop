@@ -15,10 +15,13 @@ namespace Webshop.Controllers
 
         public ProductsController(WebshopContext context)
         {
-            var Products = _context.Products.ToList();
-            ProductViewModel viewModel = new ProductViewModel();
-            viewModel.Products = Products;
-            _context = context;
+            
+                var Products = _context.Products.ToList();
+                ProductViewModel viewModel = new ProductViewModel();
+                viewModel.Products = Products;
+                _context = context;
+           
+            
         }
 
         // GET: Products

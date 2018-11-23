@@ -4,27 +4,33 @@
 
 @if (SignInManager.IsSignedIn(User))
 {
+
     <form asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Page("/Index", new { area = "" })" method="post" id="logoutForm" class="navbar-right">
-        <div class="container-test">
+        
+        <div class="b">
+            <a asp-page="/Cart/Cart" title="Cart">Cart</a>
+            <a asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage" style="margin-left:10px;font-size:12px" >@UserManager.GetUserName(User)!</a>
+            <button type="submit" class="btn btn-link navbar-btn navbar-link" style="font-size:12px;">Logout</button>
+        </div>
             <div class="b1">
-                <a asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">@UserManager.GetUserName(User)!</a>
+                
             </div>
             <div class="b2">
-                <button type="submit" class="btn btn-link navbar-btn navbar-link">Logout</button>
+               
             </div>
-        </div>
+
+        
     </form>
 }
 else
 {
-    <link href="~/css/site.css" rel="stylesheet" />
-    <div class="container-test">
+    <div class="container-test2">
         <div class="b1">
-            <a asp-area="Identity" asp-page="/Account/Register" >Register</a>
-        </div>
-        <div class="b2">
+            <a asp-area="Identity" asp-page="/Account/Register" style="margin-right:20px">Register</a>
             <a asp-area="Identity" asp-page="/Account/Login">Login</a>
         </div>
-
-    </div>
+        <div class="b2">
+            
+        </div>
+        </div>
 }
