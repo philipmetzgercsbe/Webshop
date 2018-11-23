@@ -105,14 +105,51 @@ namespace Webshop.Controllers
             var carts = _context.Carts.Include(a => a.Products).Where(a => a.User.UserID == viewModel.userId).ToList();
             
             var prodInCart = carts[0].Products.ToList();
-            if (prodInCart.Find(a => a.ProductID == id).ProductID.CompareTo(long.Parse(id)))
+            if (prodInCart.Find(a => a.ProductID == id) == null)
             {
                 ViewData["Message"] = "Product already in Cart";
                 return View("Cart",viewModel);
             }
             carts[0].Products.Add(_context.Products.Find(id));
+            UpdateTotal();
             return View("Cart", viewModel);
             //Check if Product is in Cart else add 
+        }
+        public IActionResult RemoveProduct(int id)
+        {
+
+            CartViewModel viewModel = new CartViewModel();
+            var carts = _context.Carts.Include(a => a.Products).Where(a => a.User.UserID == viewModel.userId).ToList();
+            
+            viewModel.Products.Remove(carts[0].Products.FirstOrDefault(a => a.ProductID == id));
+            UpdateTotal();
+            return View("Cart", viewModel);
+            //Check if Product is in Cart else add 
+        }
+
+        public IActionResult UpdateTotal()
+        {
+            CartViewModel viewModel = new CartViewModel();
+            var carts = _context.Carts.Include(a => a.Products).Where(a => a.User.UserID == viewModel.userId).ToList();
+            foreach (var prod in viewModel.Products)
+            {
+                 viewModel.TotalPrice += prod.Price * carts[0].ProductAmount;
+            }
+
+            return View("Cart",viewModel);
+        }
+
+        public IActionResult BuyCart()
+        {
+            CartViewModel viewModel = new CartViewModel();
+            var carts = _context.Carts.Include(a => a.Products).Where(a => a.User.UserID == viewModel.userId).ToList();
+            foreach (var elemnt in carts)
+            {
+                carts.Remove(carts.Find(a => a.User.UserID == elemnt.User.UserID));
+                
+            }
+            return LocalRedirect("home/Products");
+
         }
     }
 }
