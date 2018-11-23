@@ -29,7 +29,12 @@ namespace Webshop.Controllers
 
            
             var carts = _context.Carts.Include(a => a.Products).Where(a => a.User.UserID == viewModel.userId).ToList();
-            viewModel.Products = carts[0].Products.ToList(); //null check nicht vergessen
+            var prodamounts = _context.Carts.Include(a => a.ProductAmount).Where(a => a.User.UserID == viewModel.userId).ToList();
+            viewModel.Products = carts[0].Products.ToList();
+            foreach (var product in viewModel.Products)
+            {
+                viewModel.ProductAmount = prodamounts[0].ProductAmount;
+            }
             if (viewModel.Products == null)
             {
                 ViewData["Message"] = "No items in your cart";
@@ -37,39 +42,37 @@ namespace Webshop.Controllers
             return View(viewModel);
         }
 
-        [HttpPost]
-        public IActionResult ChangeAmount(int id,int newAmount)
-        {
-           CartViewModel viewModel = new CartViewModel();
-            
-            var cart =  _context.Carts
-                .FirstOrDefault(m => m.CartID == id);
-            var product = _context.Products
-                .FirstOrDefault(m => m.ProductID == cart.ProductFK);
-
-            if (cart == null)
-            {
-                ViewData["Message"] = "No Items in your Cart";
-                
-            }
-
-            if (cart != null)
-            {
-                var productAmount = cart.ProductAmount;
-                var productStock = product.Stock;
-                if ( productAmount <= productStock && productAmount > 0)
-                {               
-                        viewModel.ProductAmount++;
-                }
-                if (productAmount == productStock)
-                {
-                    ViewData["Message"] = "No Items in your Cart";
-                }
-
-                return newAmount;
-            }
-        }
-        //Do the same for DecreaseAmount
-        
+//        [HttpPost]
+//        public IActionResult ChangeAmount(int id,int newAmount)
+//        {
+//           CartViewModel viewModel = new CartViewModel();
+//            
+//            var cart =  _context.Carts
+//                .FirstOrDefault(m => m.CartID == id);
+//            var product = _context.Products
+//                .FirstOrDefault(m => m.ProductID == cart.ProductFK);
+//
+//            if (cart != null)
+//            {
+//                var productAmount = cart.ProductAmount;
+//                var productStock = product.Stock;
+//                if ( productAmount <= productStock && productAmount > 0)
+//                {               
+//                        viewModel.ProductAmount++;
+//                }
+//                if (productAmount == productStock)
+//                {
+//                    return LocalRedirect("Cart");
+//                }
+//
+//               
+//            }
+//            return viewModel.ProductAmount++;
+//        }
+//        //Do the same for DecreaseAmount
+//        public IActionResult AddProduct(int id)
+//        {
+//         //Check if Product is in Cart else add 
+//        }
     }
 }

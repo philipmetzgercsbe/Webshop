@@ -3,31 +3,45 @@
 @{
     ViewData["Title"] = "Cart";
     Model.userId = long.Parse(SignInManager.UserManager.GetUserId(User));
-    Model.ProductAmount = Model.Products.Find(a => a.ProductID == Model.ProductAmount);
+    Dictionary<string,int> productAmount = new Dictionary<string, int>();
+    foreach (var prod in Model.Products)
+    {
+        foreach (var amount in Model.ProductAmount)
+        {
+            productAmount.Add(prod.Name,amount);
+        }
+       
+    }
+  
+    
 }
 @inject SignInManager<IdentityUser> SignInManager;
 
-@{if (SignInManager.IsSignedIn(User))
-  { 
-    
-    foreach (var prod in Model.Products)
+@{
+    if (SignInManager.IsSignedIn(User))
     {
-        //Display instead of prod.Stock model.ProductAmount
-          <div class="content">
-              <div class="bb1">
-                  <h3><label asp-for="@prod.Name">@prod.Name</label></h3>
-                  <img src="~/images/can.jpg" width="50"/><br/> <!--@prod.Imagepath-->
-                  <p>@prod.Description</p><br/>
-                  <p>@prod.Price</p><br/>
-                  <p>@Model.ProductAmount</p>
-              </div>
 
-          </div>
+        foreach (var prod in Model.Products)
+        {
+            //Display instead of prod.Stock model.ProductAmount
+            <div class="content">
+                <div class="bb1">
+                    <h3><label asp-for="@prod.Name">@prod.Name</label></h3>
+                    <img src="~/images/can.jpg" width="50"/><br/> <!--@prod.Imagepath-->
+                    <p>@prod.Description</p><br/>
+                    <p>@prod.Price</p><br/>
+                    <p>@Model.ProductAmount</p>
+                </div>
 
-      }
-  }
+            </div>
+
+        }
+    }
+}
 
 
-    <h2>Cart</h2>
+<h2>Cart</h2>
 
+<h3>@Model.AmountOfItems</h3>
+<h4>@Model.TotalPrice</h4>
 <button type="submit" name="form-btn cart">Buy</button>
