@@ -143,13 +143,24 @@ namespace Webshop.Controllers
         {
             CartViewModel viewModel = new CartViewModel();
             var carts = _context.Carts.Include(a => a.Products).Where(a => a.User.UserID == viewModel.userId).ToList();
-            foreach (var elemnt in carts)
+            foreach (var element in carts)
             {
-                carts.Remove(carts.Find(a => a.User.UserID == elemnt.User.UserID));
+                carts.Remove(carts.Find(a => a.User.UserID == element.User.UserID));
                 
             }
             return LocalRedirect("home/Products");
 
         }
+
+       /* public IActionResult ChangeProductStock() unfinished 
+        {
+            CartViewModel viewModel = new CartViewModel();
+            var carts = _context.Carts.Include(a => a.Products).Where(a => a.User.UserID == viewModel.userId).ToList();
+            //var products = _context.Products.Include(a => a.Stock).Where(c => c.ProductID == carts[0].Products).ToList();
+            foreach (var cart in carts)
+            {
+              
+            }
+        } */
     }
 }
