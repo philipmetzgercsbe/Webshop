@@ -3,14 +3,7 @@
 @{
     ViewData["Title"] = "Cart";
     Model.userId = long.Parse(SignInManager.UserManager.GetUserId(User));
-    Dictionary<string,int> productAmount = new Dictionary<string, int>();
-    foreach (var prod in Model.Products)
-    {
-        foreach (var amount in Model.ProductAmount)
-        {
-            productAmount.Add(prod.Name,amount);
-        }
-       
+   
     }
   
     
