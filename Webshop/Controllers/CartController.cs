@@ -64,14 +64,15 @@ namespace Webshop.Controllers
                 if (productAmount <= productStock && productAmount > 0)
                 {
                     viewModel.ProductAmount++;
+                    return View("Cart", viewModel);
                 }
 
                 if (productAmount == productStock)
                 {
-                    return LocalRedirect("Cart");
+                    return View("Cart", viewModel);
                 }
 
-                return View("Cart");
+                return View("Cart",viewModel);
 
 
             }
@@ -82,14 +83,15 @@ namespace Webshop.Controllers
                 if (productAmount <= productStock && productAmount > 0)
                 {
                     viewModel.ProductAmount--;
+                    return View("Cart", viewModel);
                 }
 
                 if (productAmount == 1)
                 {
-                    return LocalRedirect("Cart");
+                    return View("Cart",viewModel);
                 }
 
-                return View("Cart");
+                return View("Cart",viewModel);
             }
 
         }
