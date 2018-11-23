@@ -97,10 +97,22 @@ namespace Webshop.Controllers
         }
     
 
-//        //Do the same for DecreaseAmount
-//        public IActionResult AddProduct(int id)
-//        {
-//         //Check if Product is in Cart else add 
-//        }
+       
+        public IActionResult AddProduct(int id)
+        {
+
+            CartViewModel viewModel = new CartViewModel();
+            var carts = _context.Carts.Include(a => a.Products).Where(a => a.User.UserID == viewModel.userId).ToList();
+            
+            var prodInCart = carts[0].Products.ToList();
+            if (prodInCart.Find(a => a.ProductID == id).ProductID.CompareTo(long.Parse(id)))
+            {
+                ViewData["Message"] = "Product already in Cart";
+                return View("Cart",viewModel);
+            }
+            carts[0].Products.Add(_context.Products.Find(id));
+            return View("Cart", viewModel);
+            //Check if Product is in Cart else add 
+        }
     }
 }

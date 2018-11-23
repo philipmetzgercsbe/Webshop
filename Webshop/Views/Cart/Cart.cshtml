@@ -16,7 +16,7 @@
 
         foreach (var prod in Model.Products)
         {
-            //Display instead of prod.Stock model.ProductAmount
+            //Display model.ProductAmount instead of prod.Stock 
 <div class="content">
     <div class="bb1">
         <h3><label asp-for="@prod.Name">@prod.Name</label></h3>
@@ -40,4 +40,4 @@
 
 <h3>@Model.AmountOfItems</h3>
 <h4>@Model.TotalPrice</h4>
-<button type="submit" name="form-btn cart">Buy</button>
+<button   name="form-btn cart">Buy</button>
