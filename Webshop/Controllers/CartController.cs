@@ -20,6 +20,7 @@ namespace Webshop.Controllers
         {
             _context = context;
         }
+        /*
         public IActionResult Cart()
         {
             CartViewModel viewModel = new CartViewModel();
@@ -62,6 +63,6 @@ namespace Webshop.Controllers
 
         }
         //Do the same for DecreaseAmount
-        
+        */
     }
 }
